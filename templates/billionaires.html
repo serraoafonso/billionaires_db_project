@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Bilionários · Billionaires DB{% endblock %}
+
+{% block content %}
+<h1>Bilionários</h1>
+<p class="subtitle">{{ billionaires | length }} registos.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Nome</th>
+      <th>Património (M USD)</th>
+      <th>Idade</th>
+      <th>Self-made</th>
+      <th>Cidadania</th>
+      <th>Indústria</th>
+      <th>Organização</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in billionaires %}
+    <tr>
+      <td>#{{ b.rank }}</td>
+      <td><a href="/billionaires/{{ b.billionaire_id }}">{{ b.full_name }}</a></td>
+      <td>{{ b.net_worth_million }}</td>
+      <td>{{ b.age }}</td>
+      <td>{{ 'Sim' if b.self_made else 'Não' }}</td>
+      <td><a href="/countries/{{ b.country_id }}">{{ b.country_name }}</a></td>
+      <td><a href="/industries/{{ b.industry_id }}">{{ b.industry_name }}</a></td>
+      <td>
+        {% if b.organization_id %}
+          <a href="/organizations/{{ b.organization_id }}">{{ b.organization_name }}</a>
+        {% else %}
+          —
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

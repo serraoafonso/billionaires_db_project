@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ organization.name }} · Billionaires DB{% endblock %}
+
+{% block content %}
+<p class="back-link"><a href="/organizations">← Voltar a Organizações</a></p>
+<h1>{{ organization.name }}</h1>
+
+<div class="detail-box">
+  <p><b>Indústria:</b> <a href="/industries/{{ organization.industry_id }}">{{ organization.industry_name }}</a></p>
+  <p><b>País sede:</b> <a href="/countries/{{ organization.country_id }}">{{ organization.country_name }}</a></p>
+</div>
+
+<h2>Bilionários associados</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Nome</th>
+      <th>Património (M USD)</th>
+      <th>País</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for b in billionaires %}
+    <tr>
+      <td>#{{ b.rank }}</td>
+      <td><a href="/billionaires/{{ b.billionaire_id }}">{{ b.full_name }}</a></td>
+      <td>{{ b.net_worth_million }}</td>
+      <td><a href="/countries/{{ b.country_id }}">{{ b.country_name }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Q1 · Billionaires DB{% endblock %}
+
+{% block content %}
+<p class="back-link"><a href="/">← Voltar ao Início</a></p>
+<h1>Q1 — Top bilionários por património líquido</h1>
+<p class="subtitle">Filtra bilionários com património igual ou superior ao valor indicado (SQL parametrizado).</p>
+
+<form class="filter-form" method="get" action="/queries/1">
+  <label for="min_worth">Património mínimo (M USD):</label>
+  <input id="min_worth" type="number" name="min_worth" value="{{ min_worth }}" min="0">
+  <button type="submit">Filtrar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Bilionário</th>
+      <th>Património (M USD)</th>
+      <th>Cidadania</th>
+      <th>Indústria</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr>
+      <td>#{{ r.rank }}</td>
+      <td><a href="/billionaires/{{ r.billionaire_id }}">{{ r.full_name }}</a></td>
+      <td>{{ r.net_worth_million }}</td>
+      <td><a href="/countries/{{ r.country_id }}">{{ r.country_name }}</a></td>
+      <td><a href="/industries/{{ r.industry_id }}">{{ r.industry_name }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

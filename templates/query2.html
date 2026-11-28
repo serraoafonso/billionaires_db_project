@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Q2 · Billionaires DB{% endblock %}
+
+{% block content %}
+<p class="back-link"><a href="/">← Voltar ao Início</a></p>
+<h1>Q2 — Número de bilionários e riqueza total por país</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>País</th>
+      <th>Região</th>
+      <th>Nº Bilionários</th>
+      <th>Património Total (M USD)</th>
+      <th>Património Médio (M USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr>
+      <td><a href="/countries/{{ r.country_id }}">{{ r.country_name }}</a></td>
+      <td>{{ r.region }}</td>
+      <td>{{ r.total_billionaires }}</td>
+      <td>{{ r.total_worth }}</td>
+      <td>{{ r.avg_worth }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

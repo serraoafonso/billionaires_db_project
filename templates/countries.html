@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Países · Billionaires DB{% endblock %}
+
+{% block content %}
+<h1>Países</h1>
+<p class="subtitle">{{ countries | length }} países registados.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>País</th>
+      <th>Região</th>
+      <th>Nº Bilionários</th>
+      <th>PIB (B USD)</th>
+      <th>População</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in countries %}
+    <tr>
+      <td><a href="/countries/{{ c.country_id }}">{{ c.name }}</a></td>
+      <td>{{ c.region }}</td>
+      <td>{{ c.billionaire_count }}</td>
+      <td>{{ c.gdp_billion_usd }}</td>
+      <td>{{ c.population }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

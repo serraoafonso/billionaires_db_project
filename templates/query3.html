@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Q3 · Billionaires DB{% endblock %}
+
+{% block content %}
+<p class="back-link"><a href="/">← Voltar ao Início</a></p>
+<h1>Q3 — Bilionários self-made acima da média da sua indústria</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bilionário</th>
+      <th>Património (M USD)</th>
+      <th>Indústria</th>
+      <th>Média da Indústria (M USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in rows %}
+    <tr>
+      <td><a href="/billionaires/{{ r.billionaire_id }}">{{ r.full_name }}</a></td>
+      <td>{{ r.net_worth_million }}</td>
+      <td><a href="/industries/{{ r.industry_id }}">{{ r.industry_name }}</a></td>
+      <td>{{ r.industry_avg }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

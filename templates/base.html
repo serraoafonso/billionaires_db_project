@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Billionaires DB · CC2005{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="/">Billionaires DB</a>
+      <div class="nav-links">
+        <a href="/">Início</a>
+        <a href="/billionaires">Bilionários</a>
+        <a href="/countries">Países</a>
+        <a href="/industries">Indústrias</a>
+        <a href="/organizations">Organizações</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">Projeto de Bases de Dados (CC2005) · FCUP</div>
+  </footer>
+</body>
+</html>

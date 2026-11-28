@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Q{{ query_id }} · Billionaires DB{% endblock %}
+
+{% block content %}
+<p class="back-link"><a href="/">← Voltar ao Início</a></p>
+<h1>Interrogação {{ query_id }}</h1>
+<div class="detail-box">
+  <p>Esta rota (<code>/queries/{{ query_id }}</code>) está reservada para a interrogação {{ query_id }} de <code>sql/queries.sql</code> (Pessoa 3).</p>
+</div>
+{% endblock %}

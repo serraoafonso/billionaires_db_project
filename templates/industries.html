@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Indústrias · Billionaires DB{% endblock %}
+
+{% block content %}
+<h1>Indústrias</h1>
+<p class="subtitle">{{ industries | length }} setores económicos.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indústria</th>
+      <th>Nº Bilionários</th>
+      <th>Património Total (M USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in industries %}
+    <tr>
+      <td><a href="/industries/{{ i.industry_id }}">{{ i.name }}</a></td>
+      <td>{{ i.billionaire_count }}</td>
+      <td>{{ i.total_worth }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

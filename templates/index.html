@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Início · Billionaires DB{% endblock %}
+
+{% block content %}
+<h1>Billionaires Statistics Database</h1>
+<p class="subtitle">
+  Aplicação web em Flask para explorar a base de dados relacional do projeto de Bases de Dados (CC2005).
+</p>
+
+<h2>Tabelas da Base de Dados</h2>
+<div class="card-grid">
+  <a class="card" href="/billionaires">
+    <span class="card-label">Bilionários</span>
+    <span class="card-value">{{ stats.billionaires }}</span>
+  </a>
+  <a class="card" href="/countries">
+    <span class="card-label">Países</span>
+    <span class="card-value">{{ stats.countries }}</span>
+  </a>
+  <a class="card" href="/industries">
+    <span class="card-label">Indústrias</span>
+    <span class="card-value">{{ stats.industries }}</span>
+  </a>
+  <a class="card" href="/organizations">
+    <span class="card-label">Organizações</span>
+    <span class="card-value">{{ stats.organizations }}</span>
+  </a>
+</div>
+
+<h2>Interrogações SQL (1–10)</h2>
+<ol class="query-list">
+  <li><a href="/queries/1">Q1 — Top bilionários por património líquido (com filtro parametrizado)</a></li>
+  <li><a href="/queries/2">Q2 — Número de bilionários e riqueza total por país</a></li>
+  <li><a href="/queries/3">Q3 — Bilionários self-made acima da média da sua indústria</a></li>
+  <li><a href="/queries/4">Q4 — Interrogação 4 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/5">Q5 — Interrogação 5 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/6">Q6 — Interrogação 6 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/7">Q7 — Interrogação 7 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/8">Q8 — Interrogação 8 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/9">Q9 — Interrogação 9 (a integrar da Pessoa 3)</a></li>
+  <li><a href="/queries/10">Q10 — Interrogação 10 (a integrar da Pessoa 3)</a></li>
+</ol>
+{% endblock %}

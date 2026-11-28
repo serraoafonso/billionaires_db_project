@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Barra de navegação */
+.navbar {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 14px 0;
+  margin-bottom: 28px;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Títulos e texto */
+h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  color: #0f172a;
+}
+
+h2 {
+  margin: 28px 0 12px;
+  font-size: 19px;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #475569;
+}
+
+.back-link {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+/* Cartões da página inicial */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  color: #0f172a;
+}
+
+.card:hover {
+  border-color: #94a3b8;
+  text-decoration: none;
+}
+
+.card-label {
+  display: block;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.card-value {
+  display: block;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Caixa de detalhe */
+.detail-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.detail-box p {
+  margin: 6px 0;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f1f5f9;
+  font-size: 13px;
+  color: #334155;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Formulário simples (ex.: Q1) */
+.filter-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter-form input {
+  padding: 7px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 160px;
+}
+
+.filter-form button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-form button:hover {
+  background: #1e293b;
+}
+
+/* Lista de interrogações */
+.query-list {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px 16px 38px;
+}
+
+.query-list li {
+  margin: 6px 0;
+}
+
+.footer {
+  margin-top: 48px;
+  padding: 16px 0;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 13px;
+}

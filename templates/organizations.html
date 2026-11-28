@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Organizações · Billionaires DB{% endblock %}
+
+{% block content %}
+<h1>Organizações</h1>
+<p class="subtitle">{{ organizations | length }} organizações registadas.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organização</th>
+      <th>Indústria</th>
+      <th>País Sede</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for o in organizations %}
+    <tr>
+      <td><a href="/organizations/{{ o.organization_id }}">{{ o.name }}</a></td>
+      <td><a href="/industries/{{ o.industry_id }}">{{ o.industry_name }}</a></td>
+      <td><a href="/countries/{{ o.country_id }}">{{ o.country_name }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
